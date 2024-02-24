@@ -42,12 +42,12 @@ def criar_botoes(frames):
     bt_buscar.place(relx=0.43, rely=0.7, relwidth=0.15, relheight=0.3)
 
     # Crie o botão "Baixar Áudio"
-    bt_mp3 = tk.Button(frames.frame5, text='Baixar Áudio', font=('Arial', 12), command=baixar_audio)
-    bt_mp3.place(relx=0.182, rely=0.1, relwidth=0.13, relheight=0.4)
+    bt_mp3 = tk.Button(frames.frame5, text='Baixar Áudio (MP3)', font=('Arial', 12), command=baixar_audio)
+    bt_mp3.place(relx=0.182, rely=0.1, relwidth=0.15, relheight=0.4)
 
     # Crie o botão "Baixar Vídeo"
-    bt_mp4 = tk.Button(frames.frame5, text='Baixar Vídeo', font=('Arial', 12), command=baixar_video)
-    bt_mp4.place(relx=0.67, rely=0.1, relwidth=0.13, relheight=0.4)
+    bt_mp4 = tk.Button(frames.frame5, text='Baixar Vídeo (MP4)', font=('Arial', 12), command=baixar_video)
+    bt_mp4.place(relx=0.65, rely=0.1, relwidth=0.15, relheight=0.4)
 
     # Crie o botão "Diretório"
     bt_dir = tk.Button(frames.frame4, text='...', command=escolher_caminho)
