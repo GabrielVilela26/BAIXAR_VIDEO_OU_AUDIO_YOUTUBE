@@ -10,6 +10,8 @@
  
  3º - Em seu editor de código fonte instale a biblioteca "TKINTER", executando o seguinta comando: "pip install tkinter"
 
+ 4º - Em seu editor de código fonte instale a biblioteca "PYTUBE", executando o seguinta comando: "pip install pytube"
+
  4º - Em seu editor de código fonte instale a biblioteca "CUSTOMTKINTER", executando o seguinta comando: "pip install customtkinter"
 
  5° - Em seu editor de código fonte instale a biblioteca "PILLOW", executando o seguinta comando: "pip install pillow"
