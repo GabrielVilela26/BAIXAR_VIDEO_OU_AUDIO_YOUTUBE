@@ -8,7 +8,7 @@
 
  2° - É necessário ter o Python3 instalado em sua máquina. Caso não tenha, pode encontrar o arquivo de instalação no link: (https://www.python.org/downloads/)
  
- 3º - Em seu editor de código fonte instale a biblioteca "PYGAME", executando o seguinta comando: "pip install pygame"
+ 3º - Em seu editor de código fonte instale a biblioteca "TKINTER", executando o seguinta comando: "pip install tkinter"
 
  4º - Em seu editor de código fonte instale a biblioteca "CUSTOMTKINTER", executando o seguinta comando: "pip install customtkinter"
 
