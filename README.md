@@ -12,10 +12,10 @@
 
  4º - Em seu editor de código fonte instale a biblioteca "PYTUBE", executando o seguinta comando: "pip install pytube"
 
- 4º - Em seu editor de código fonte instale a biblioteca "CUSTOMTKINTER", executando o seguinta comando: "pip install customtkinter"
+ 5º - Em seu editor de código fonte instale a biblioteca "CUSTOMTKINTER", executando o seguinta comando: "pip install customtkinter"
 
- 5° - Em seu editor de código fonte instale a biblioteca "PILLOW", executando o seguinta comando: "pip install pillow"
+ 6° - Em seu editor de código fonte instale a biblioteca "PILLOW", executando o seguinta comando: "pip install pillow"
  
- 6° - Após a instalação, execute o arquivo Baixar.py
+ 7° - Após a instalação, execute o arquivo Baixar.py
  
- 7° - Adicione o link > cliquem em "Buscar" > selecione um diretório > escolha qual o formado deseja baixar.
+ 8° - Adicione o link > cliquem em "Buscar" > selecione um diretório > escolha qual o formado deseja baixar.
