@@ -6,7 +6,6 @@ import urllib.request
 import io
 from PIL import Image, ImageTk
 import os
-from moviepy.editor import VideoFileClip
 
 # Crie a janela principal da aplicação
 app = ctk.CTk()
@@ -175,9 +174,8 @@ def baixar_audio():
             # Baixando áudio
             ys = video.streams.filter(only_audio=True, file_extension='mp4').first()
             if ys:
-                ys.download(output_path=vCaminho, filename=f'{filename}.mp4')
-                convert_to_mp3(vCaminho, filename)
-
+                ys.download(output_path=vCaminho, filename=f'{filename}.mp3')
+                
                 if warning_label:
                     warning_label.destroy()
                 download_label = tk.Label(frames.frame5, text="Download de Áudio Concluído!", font=('Arial', 12, 'bold'), foreground='white', bg='#474747')
@@ -190,18 +188,6 @@ def baixar_audio():
                 warning_label.place(relx=0.5, rely=0.6, anchor='center')
     except Exception as e:
         print(e)
-
-def convert_to_mp3(vCaminho, filename):
-    # Convertendo o arquivo de vídeo MP4 para MP3
-    video_path = os.path.join(vCaminho, f'{filename}.mp4')
-    audio_path = os.path.join(vCaminho, f'{filename}.mp3')
-
-    video = VideoFileClip(video_path)
-    audio = video.audio
-    audio.write_audiofile(audio_path)
-
-    # Excluir o arquivo de vídeo MP4 após a conversão
-    os.remove(video_path)
 
 # Crie os elementos da interface
 criar_campos(frames)
