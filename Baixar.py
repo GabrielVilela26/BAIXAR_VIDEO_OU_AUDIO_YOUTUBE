@@ -6,6 +6,7 @@ import urllib.request
 import io
 from PIL import Image, ImageTk
 import os
+from moviepy.editor import VideoFileClip
 
 # Crie a janela principal da aplicação
 app = ctk.CTk()
@@ -42,12 +43,12 @@ def criar_botoes(frames):
     bt_buscar.place(relx=0.43, rely=0.7, relwidth=0.15, relheight=0.3)
 
     # Crie o botão "Baixar Áudio"
-    bt_mp3 = tk.Button(frames.frame5, text='Baixar Áudio (MP3)', font=('Arial', 12), command=baixar_audio)
-    bt_mp3.place(relx=0.182, rely=0.1, relwidth=0.15, relheight=0.4)
+    bt_mp3 = tk.Button(frames.frame5, text='Baixar Áudio', font=('Arial', 12), command=baixar_audio)
+    bt_mp3.place(relx=0.182, rely=0.1, relwidth=0.13, relheight=0.4)
 
     # Crie o botão "Baixar Vídeo"
-    bt_mp4 = tk.Button(frames.frame5, text='Baixar Vídeo (MP4)', font=('Arial', 12), command=baixar_video)
-    bt_mp4.place(relx=0.65, rely=0.1, relwidth=0.15, relheight=0.4)
+    bt_mp4 = tk.Button(frames.frame5, text='Baixar Vídeo', font=('Arial', 12), command=baixar_video)
+    bt_mp4.place(relx=0.67, rely=0.1, relwidth=0.13, relheight=0.4)
 
     # Crie o botão "Diretório"
     bt_dir = tk.Button(frames.frame4, text='...', command=escolher_caminho)
@@ -56,13 +57,13 @@ def criar_botoes(frames):
 def criar_campos(frames):
     # Campo de entrada para o link
     global lblLink
-    lblLink = tk.Entry(frames.frame1, width=67,  font=(20), bd=0.2, highlightbackground='#A4A5A6', highlightthickness=1)
+    lblLink = tk.Entry(frames.frame1, width=55,  font=(20), bd=0.2, highlightbackground='#A4A5A6', highlightthickness=1)
     lblLink.focus()
     lblLink.place(relx=0.182, rely=0.35, relheight=0.26)
 
     # Campo de entrada para o diretório
     global lblDir
-    lblDir = tk.Entry(frames.frame4, width=65, font=(20), bd=0.1, highlightbackground='#A4A5A6', highlightthickness=1)
+    lblDir = tk.Entry(frames.frame4, width=55, font=(20), bd=0.1, highlightbackground='#A4A5A6', highlightthickness=1)
     lblDir.place(relx=0.182, rely=0.5, relheight=0.45)
 
 def criar_textos(frames):
@@ -174,12 +175,8 @@ def baixar_audio():
             # Baixando áudio
             ys = video.streams.filter(only_audio=True, file_extension='mp4').first()
             if ys:
-                ys.download(output_path=vCaminho, filename=f'{filename}.mp3')
-
-                # Renomear o arquivo baixado para ter extensão .mp3
-                downloaded_file_path = os.path.join(vCaminho, f'{filename}.mp3')
-                new_file_path = os.path.join(vCaminho, f'{filename}.mp3')
-                os.rename(downloaded_file_path, new_file_path)
+                ys.download(output_path=vCaminho, filename=f'{filename}.mp4')
+                convert_to_mp3(vCaminho, filename)
 
                 if warning_label:
                     warning_label.destroy()
@@ -193,6 +190,18 @@ def baixar_audio():
                 warning_label.place(relx=0.5, rely=0.6, anchor='center')
     except Exception as e:
         print(e)
+
+def convert_to_mp3(vCaminho, filename):
+    # Convertendo o arquivo de vídeo MP4 para MP3
+    video_path = os.path.join(vCaminho, f'{filename}.mp4')
+    audio_path = os.path.join(vCaminho, f'{filename}.mp3')
+
+    video = VideoFileClip(video_path)
+    audio = video.audio
+    audio.write_audiofile(audio_path)
+
+    # Excluir o arquivo de vídeo MP4 após a conversão
+    os.remove(video_path)
 
 # Crie os elementos da interface
 criar_campos(frames)
