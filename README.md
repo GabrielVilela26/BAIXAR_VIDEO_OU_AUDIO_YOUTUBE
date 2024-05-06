@@ -1,7 +1,7 @@
 # BAIXAR_VIDEO.AUDIO_YOUTUBE
 
 # Descrição
-Este programa é uma aplicação de desktop que utiliza a biblioteca Tkinter para criar uma interface gráfica de usuário, permitindo que os usuários busquem vídeos do YouTube através de links, visualizem miniaturas e títulos dos vídeos, escolham um diretório de destino e baixem tanto vídeos quanto áudio dos vídeos selecionados, fornecendo feedback adequado durante todo o processo.
+Este programa é uma aplicação de desktop que utiliza a biblioteca Tkinter para criar uma interface gráfica de usuário, permitindo que os usuários busquem vídeos do YouTube através de links, visualizem miniaturas e títulos dos vídeos, escolham um diretório de destino e baixem tanto vídeos quanto áudio dos vídeos selecionados.
 
 # Como usar
  1º - Faça o download do arquivo
